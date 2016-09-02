@@ -25,3 +25,4 @@ app.listen(port, () => {
 // routes
 app.post('/api/car', carCtrl.newCar)
 app.get('/api/car', carCtrl.getCar)
+app.put('/api/car/:id', carCtrl.updateCar)

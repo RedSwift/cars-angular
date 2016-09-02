@@ -17,7 +17,23 @@ let newCar = (req, res) => {
   })
 }
 
+let updateCar = (req, res) => {
+  Car.findOne({_id: req.params.id}, (err, car) => {
+    if (err) return res.status(401).json({error: err})
+    else {
+      car.brand = req.body.brand
+      car.model = req.body.model
+      car.year = req.body.year
+
+      car.save((err, result) => {
+        return err ? res.status(401).json({error: err}) : res.status(201).json(result)
+      })
+    }
+  })
+}
+
 module.exports = {
   getCar: getCar,
-  newCar: newCar
+  newCar: newCar,
+  updateCar: updateCar
 }
