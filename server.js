@@ -26,3 +26,4 @@ app.listen(port, () => {
 app.post('/api/car', carCtrl.newCar)
 app.get('/api/car', carCtrl.getCar)
 app.put('/api/car/:id', carCtrl.updateCar)
+app.delete('/api/car/:id', carCtrl.deleteCar)

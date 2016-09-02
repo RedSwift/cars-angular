@@ -32,8 +32,14 @@ let updateCar = (req, res) => {
   })
 }
 
+let deleteCar = (req, res) => {
+  Car.remove({_id: req.params.id}, (err) => {
+    return err ? res.status(401).json({error: err}) : res.status(201).json('Delete Successful')
+  })
+}
 module.exports = {
   getCar: getCar,
   newCar: newCar,
-  updateCar: updateCar
+  updateCar: updateCar,
+  deleteCar: deleteCar
 }
