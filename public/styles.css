@@ -9,3 +9,11 @@
 th, td {
     padding-left: 15px;
 }
+
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 60px;
+  background-color: #f5f5f5;
+}

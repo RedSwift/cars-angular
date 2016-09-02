@@ -1,6 +1,6 @@
 angular.module('carApp')
-  .component('display', {
-    templateUrl: '/features/main/display.template.html',
+  .component('getCar', {
+    templateUrl: '/features/main/get-car.template.html',
     controller: function ($http, $window) {
       var ctrl = this
       $http({
