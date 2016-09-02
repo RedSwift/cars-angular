@@ -1,0 +1,19 @@
+{
+  "name": "wipro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RedSwift/cars-angular.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RedSwift/cars-angular/issues"
+  },
+  "homepage": "https://github.com/RedSwift/cars-angular#readme"
+}
