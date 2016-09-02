@@ -1,45 +1,45 @@
-const Car = require('../models/car')
+var Car = require('../models/car')
 
-let getCar = (req, res) => {
-  Car.find({}, (err, car) => {
+var getCar = function (req, res) {
+  Car.find({}, function (err, car) {
     return err ? res.status(401).json({error: err}) : res.status(200).json(car)
   })
 }
 
-let showCar = (req, res) => {
-  Car.findOne({_id: req.params.id}, (err, car) => {
+var showCar = function (req, res) {
+  Car.findOne({_id: req.params.id}, function (err, car) {
     return err ? res.status(401).json({error: err}) : res.status(200).json(car)
   })
 }
 
-let newCar = (req, res) => {
+var newCar = function (req, res) {
   var makeCar = new Car()
   makeCar.brand = req.body.brand
   makeCar.model = req.body.model
   makeCar.year = req.body.year
 
-  makeCar.save((err, result) => {
+  makeCar.save(function (err, result) {
     return err ? res.status(401).json({error: err}) : res.status(201).json(result)
   })
 }
 
-let updateCar = (req, res) => {
-  Car.findOne({_id: req.params.id}, (err, car) => {
+var updateCar = function (req, res) {
+  Car.findOne({_id: req.params.id}, function (err, car) {
     if (err) return res.status(401).json({error: err})
     else {
       car.brand = req.body.brand
       car.model = req.body.model
       car.year = req.body.year
 
-      car.save((err, result) => {
+      car.save(function (err, result) {
         return err ? res.status(401).json({error: err}) : res.status(201).json(result)
       })
     }
   })
 }
 
-let deleteCar = (req, res) => {
-  Car.remove({_id: req.params.id}, (err) => {
+var deleteCar = function (req, res) {
+  Car.remove({_id: req.params.id}, function (err) {
     return err ? res.status(401).json({error: err}) : res.status(201).json('Delete Successful')
   })
 }

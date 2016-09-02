@@ -1,10 +1,10 @@
-const express = require('express')
-const app = express()
-const port = process.env.PORT || 3000
-const morgan = require('morgan')
-const mongoose = require('mongoose')
-const bodyParser = require('body-parser')
-const carCtrl = require('./server/controllers/car_controller')
+var express = require('express')
+var app = express()
+var port = process.env.PORT || 3000
+var morgan = require('morgan')
+var mongoose = require('mongoose')
+var bodyParser = require('body-parser')
+var carCtrl = require('./server/controllers/car_controller')
 require('dotenv').config()
 
 mongoose.connect(process.env.MONGODB_URI)
