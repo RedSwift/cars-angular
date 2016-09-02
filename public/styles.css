@@ -1,0 +1,11 @@
+.margin-top {
+  margin-top: 25px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+th, td {
+    padding-left: 15px;
+}

@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }))
 
-// app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public'))
 
 app.use(morgan('dev'))
 
@@ -23,6 +23,10 @@ app.listen(port, () => {
 })
 
 // routes
+app.get('/', (req, res) => {
+  res.sendFile('index.html')
+})
+
 app.post('/api/car', carCtrl.newCar)
 app.get('/api/car', carCtrl.getCar)
 app.put('/api/car/:id', carCtrl.updateCar)

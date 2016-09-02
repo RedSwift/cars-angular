@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <td>S.No</td>
+        <td>Brand and Model</td>
+        <td>Year</td>
+        <td>Operation</td>
+      </tr>
+    </thead>
+    <tbody ng-repeat="car in $ctrl.cars track by $index">
+      <tr>
+        <td>{{$index + 1}}</td>
+        <td>{{car.model + ' ' + car.brand}}</td>
+        <td>{{car.year}}</td>
+        <td>Update | Delete</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
