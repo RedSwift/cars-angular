@@ -1,9 +1,10 @@
 {
-  "name": "wipro",
+  "name": "cars-angular",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
+    "start": "source .env; node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/RedSwift/cars-angular/issues"
   },
-  "homepage": "https://github.com/RedSwift/cars-angular#readme"
+  "homepage": "https://github.com/RedSwift/cars-angular#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.10",
+    "morgan": "^1.7.0"
+  }
 }
