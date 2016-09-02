@@ -2,7 +2,7 @@ var carApp = angular.module('carApp')
 
 carApp.component('home', {
   templateUrl: '/features/main/home.template.html',
-  controller: function ($http) {
+  controller: function ($http, $window) {
     this.newCar = function () {
       $http({
         method: 'POST',
@@ -13,9 +13,9 @@ carApp.component('home', {
           year: this.year
         }
       }).then(function (res) {
-        console.log(res)
+        $window.location.reload()
       }, function (err) {
-        console.log(err)
+        alert('Error: ' + err)
       })
     }
   }

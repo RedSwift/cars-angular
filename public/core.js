@@ -4,4 +4,7 @@ angular.module('carApp', ['ngRoute'])
     .when('/', {
       template: '<home></home>'
     })
+    .when('/car/:id', {
+      template: '<update-car></update-car>'
+    })
   })

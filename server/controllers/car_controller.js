@@ -6,6 +6,12 @@ let getCar = (req, res) => {
   })
 }
 
+let showCar = (req, res) => {
+  Car.findOne({_id: req.params.id}, (err, car) => {
+    return err ? res.status(401).json({error: err}) : res.status(200).json(car)
+  })
+}
+
 let newCar = (req, res) => {
   var makeCar = new Car()
   makeCar.brand = req.body.brand
@@ -41,5 +47,6 @@ module.exports = {
   getCar: getCar,
   newCar: newCar,
   updateCar: updateCar,
-  deleteCar: deleteCar
+  deleteCar: deleteCar,
+  showCar: showCar
 }

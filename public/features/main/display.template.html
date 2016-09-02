@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<div class="container">
-  <table>
+<div>
+  <table class="container-fluid">
     <thead>
-      <tr>
-        <td>S.No</td>
-        <td>Brand and Model</td>
-        <td>Year</td>
-        <td>Operation</td>
+      <tr class="text-center">
+        <td class="col-md-2">S.No</td>
+        <td class="col-md-2">Brand and Model</td>
+        <td class="col-md-2">Year</td>
+        <td class="col-md-2">Operation</td>
       </tr>
     </thead>
     <tbody ng-repeat="car in $ctrl.cars track by $index">
-      <tr>
-        <td>{{$index + 1}}</td>
+      <tr class="text-center">
+        <td >{{$index + 1}}</td>
         <td>{{car.model + ' ' + car.brand}}</td>
         <td>{{car.year}}</td>
-        <td>Update | Delete</td>
+        <td><button class="btn btn-default btn-xs" ng-click="$ctrl.updateCar(car._id)">Update</button> | <button class="btn btn-default btn-xs" ng-click="$ctrl.deleteCar(car._id)">Delete</button></td>
       </tr>
     </tbody>
   </table>
